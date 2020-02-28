@@ -14,6 +14,7 @@ import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.Player;
 import com.google.android.exoplayer2.Player.EventListener;
 import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.ui.SubtitleView;
 import com.google.android.exoplayer2.audio.AudioAttributes;
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
 import com.google.android.exoplayer2.source.ExtractorMediaSource;
@@ -220,6 +221,8 @@ final class VideoPlayer {
 
   void play() {
     exoPlayer.setPlayWhenReady(true);
+    subs = exoPlayer.getSubtitleView();
+    //subs.setVisibility(View.VISIBLE);
   }
 
   void pause() {
